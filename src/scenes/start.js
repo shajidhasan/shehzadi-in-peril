@@ -41,7 +41,7 @@ k.scene("start", () => {
         }
     })
 
-    onMousePress(() => {
+    k.onMousePress(() => {
         if (starting) return
         starting = true
 
