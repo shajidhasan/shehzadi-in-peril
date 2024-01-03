@@ -21,13 +21,18 @@ export const makeAlien = (normalSpeed, fastSpeed) => {
     } else {
         position.y = k.height() + dy
     }
+    let angle = -Math.atan((center.x - position.x) / (center.y - position.y)) * 180 / Math.PI
+
+    if (isTop) {
+        angle = angle - 180
+    }
 
     const alien = k.make([
         k.pos(position),
         k.anchor('center'),
         k.area({ shape: new k.Rect(k.vec2(0), 80, 200) }),
         k.body(),
-        k.rotate(), ,
+        k.rotate(angle),
         k.z(10),
         k.state("alive", ["alive", "dead", "poison"]),
         'alien'
@@ -63,14 +68,8 @@ export const makeAlien = (normalSpeed, fastSpeed) => {
     alien.onStateUpdate("alive", () => {
         const position = alien.pos
         const direction = k.center().sub(position).unit()
-        let angle = -Math.atan((center.x - position.x) / (center.y - position.y)) * 180 / Math.PI
-
-        if (isTop) {
-            angle = angle - 180
-        }
 
         alien.move(direction.scale(speed))
-        alien.rotateTo(angle)
     })
 
     alien.onStateEnter("dead", () => {

@@ -2,6 +2,8 @@ import k from "../kaboom"
 import { makeBackground } from "../objects/background"
 
 k.scene("over", (score) => {
+    let canStartNewGame = false
+
     k.add(makeBackground())
     k.add([
         k.sprite('game_over'),
@@ -38,7 +40,10 @@ k.scene("over", (score) => {
         k.z(5)
     ])
 
+    k.wait(2, () => { canStartNewGame = true })
+
     k.onMousePress(() => {
-        k.go('start')
+        if (canStartNewGame)
+            k.go('start')
     })
 })

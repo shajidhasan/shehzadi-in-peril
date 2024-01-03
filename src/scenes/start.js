@@ -4,7 +4,7 @@ import { makePrincess } from "../objects/princess"
 
 k.scene("start", () => {
     const IS_DESKTOP = k.height() < k.width()
-    const CAMERA_SCALE = IS_DESKTOP ? 1.5 : 3.5
+    const CAMERA_SCALE = IS_DESKTOP ? 1.5 : 2.5
     const CAMERA_POSITION = k.center().add(k.vec2(0, IS_DESKTOP ? 100 : 80))
 
     let starting = false
@@ -20,7 +20,8 @@ k.scene("start", () => {
         k.scale(IS_DESKTOP ? 0.3 : 0.2),
         k.anchor('center'),
         k.opacity(),
-        k.pos(k.center().add(0, IS_DESKTOP ? 200 : 180))
+        k.pos(k.center().add(0, IS_DESKTOP ? 200 : 180)),
+        k.z(200)
     ])
 
     const prompt = k.add([
