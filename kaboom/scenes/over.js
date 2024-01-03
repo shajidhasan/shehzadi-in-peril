@@ -1,4 +1,4 @@
-import k from "../kaboom"
+import k from ".."
 import { makeBackground } from "../objects/background"
 
 k.scene("over", (score) => {

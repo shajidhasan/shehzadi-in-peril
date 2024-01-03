@@ -1,4 +1,4 @@
-import k from "../kaboom";
+import k from "..";
 
 const healthBar = (initialHealth, totalHealth) => {
     let currentHealth = initialHealth

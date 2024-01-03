@@ -1,4 +1,4 @@
-import k from "../kaboom";
+import k from "..";
 
 const makeCircle = () => {
     const circle = k.make([

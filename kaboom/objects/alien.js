@@ -1,4 +1,4 @@
-import k from '../kaboom'
+import k from '..'
 
 export const makeAlien = (normalSpeed, fastSpeed) => {
     const center = k.center()
