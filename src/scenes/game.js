@@ -7,7 +7,7 @@ import { makeScore } from "../objects/score";
 const NORMAL_SPEED_INCREMENT = 5
 const FAST_SPEED_INCREMENT = 7.5
 const INITIAL_NORMAL_SPEED = 100
-const INITIAL_FAST_SPEED = 500
+const INITIAL_FAST_SPEED = 300
 const INITIAL_WAIT_TIME = 1
 const WAIT_TIME_DECREMENT = 0.01
 const MINIMUM_WAIT_TIME = 0.05
