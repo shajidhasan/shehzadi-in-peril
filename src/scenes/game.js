@@ -12,11 +12,12 @@ const INITIAL_WAIT_TIME = 1
 const WAIT_TIME_DECREMENT = 0.01
 const MINIMUM_WAIT_TIME = 0.05
 
-let normalSpeed = INITIAL_NORMAL_SPEED
-let fastSpeed = INITIAL_FAST_SPEED
-let waitTime = INITIAL_WAIT_TIME
 
 k.scene("game", () => {
+    let normalSpeed = INITIAL_NORMAL_SPEED
+    let fastSpeed = INITIAL_FAST_SPEED
+    let waitTime = INITIAL_WAIT_TIME
+
     k.add(makeBackground())
     const princess = k.add(makePrincess())
     const score = k.add(makeScore())
