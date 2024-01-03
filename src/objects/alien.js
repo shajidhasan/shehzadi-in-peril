@@ -33,7 +33,7 @@ export const makeAlien = (normalSpeed, fastSpeed) => {
         'alien'
     ])
 
-    alien.add([
+    const alienShadow = alien.add([
         k.sprite('alien_shadow'),
         k.anchor('center'),
         isTop ? k.pos(8, 30) : k.pos(-8, 30),
@@ -115,7 +115,9 @@ export const makeAlien = (normalSpeed, fastSpeed) => {
     })
 
     alien.onStateUpdate("dead", () => {
-        alienBody.opacity = alienBody.opacity - k.dt() / 3
+        alienBody.opacity -= k.dt() / 3
+        alienShadow.opacity -= k.dt() / 3
+
 
         if (alienBody.opacity <= 0) {
             alien.destroy()
@@ -123,7 +125,8 @@ export const makeAlien = (normalSpeed, fastSpeed) => {
     })
 
     alien.onStateUpdate("poison", () => {
-        alienBody.opacity = alienBody.opacity - k.dt()
+        alienBody.opacity -= k.dt() / 3
+        alienShadow.opacity -= k.dt() / 3
 
         if (alienBody.opacity <= 0) {
             alien.destroy()
