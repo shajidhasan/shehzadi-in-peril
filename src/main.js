@@ -6,5 +6,4 @@ import "./scenes/over"
 import "./scenes/debug"
 import "./assets"
 
-k.audioCtx.resume()
 k.go("start")
