@@ -135,7 +135,7 @@ export const makeAlien = (normalSpeed, fastSpeed) => {
 
 
     alienHitbox.onClick(() => {
-        if (alien.state === 'dead') return
+        if (alien.state === 'dead' || alien.state === 'poison') return
         alien.enterState('dead')
         k.play('splat', { volume: 0.4 })
     })
