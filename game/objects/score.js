@@ -1,4 +1,4 @@
-import k from ".."
+import k from "../kaboom"
 
 export const makeScore = () => {
     const score = k.make([

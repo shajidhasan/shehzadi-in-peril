@@ -1,4 +1,4 @@
-import k from "..";
+import k from "../kaboom";
 
 export const makeBackground = () => {
     const background = k.make([

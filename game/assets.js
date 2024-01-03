@@ -1,21 +1,21 @@
-import k from ".."
+import k from "./kaboom"
 
-import logo from "./sprites/logo.png"
-import alien from "./sprites/alien.png"
-import floor from "./sprites/floor.png"
-import princess from "./sprites/princess.png"
-import game_over from "./sprites/game_over.png"
-import alien_dark from "./sprites/alien_dark.png"
-import alien_blood from "./sprites/alien_blood.png"
-import alien_poison from "./sprites/alien_poison.png"
-import alien_shadow from "./sprites/alien_shadow.png"
-import princess_shadow from "./sprites/princess_shadow.png"
+import logo from "./assets/sprites/logo.png"
+import alien from "./assets/sprites/alien.png"
+import floor from "./assets/sprites/floor.png"
+import princess from "./assets/sprites/princess.png"
+import game_over from "./assets/sprites/game_over.png"
+import alien_dark from "./assets/sprites/alien_dark.png"
+import alien_blood from "./assets/sprites/alien_blood.png"
+import alien_poison from "./assets/sprites/alien_poison.png"
+import alien_shadow from "./assets/sprites/alien_shadow.png"
+import princess_shadow from "./assets/sprites/princess_shadow.png"
 
-import die from "./sounds/die.mp3"
-import ouch from "./sounds/ouch.mp3"
-import splat from "./sounds/splat.mp3"
+import die from "./assets/sounds/die.mp3"
+import ouch from "./assets/sounds/ouch.mp3"
+import splat from "./assets/sounds/splat.mp3"
 
-import saptami_arcade from "./fonts/saptami_arcade.ttf"
+import saptami_arcade from "./assets/fonts/saptami_arcade.ttf"
 
 k.loadSprite("princess", princess, {
     sliceX: 3,

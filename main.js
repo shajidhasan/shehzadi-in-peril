@@ -1,9 +1,9 @@
-import k from "./kaboom"
+import k from "./game/kaboom"
 
-import "./kaboom/assets"
-import "./kaboom/scenes/start"
-import "./kaboom/scenes/game"
-import "./kaboom/scenes/over"
-import "./kaboom/scenes/debug"
+import "./game/assets"
+import "./game/scenes/start"
+import "./game/scenes/game"
+import "./game/scenes/over"
+import "./game/scenes/debug"
 
 k.go("start")

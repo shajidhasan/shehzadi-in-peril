@@ -1,4 +1,4 @@
-import k from '..'
+import k from '../kaboom'
 import { makeHealth } from './health'
 
 export const makePrincess = (dummy = false) => {

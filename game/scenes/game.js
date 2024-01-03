@@ -1,4 +1,4 @@
-import k from "..";
+import k from "../kaboom";
 import { makeBackground } from "../objects/background";
 import { makeAlien } from "../objects/alien";
 import { makePrincess } from "../objects/princess";

@@ -5,7 +5,6 @@ const k = kaboom({
     backgroundAudio: true,
     stretch: false,
     crisp: true,
-    global: false,
 });
 
 export default k;
