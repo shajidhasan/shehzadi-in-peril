@@ -54,5 +54,3 @@ k.loadFont("saptami_arcade", "/fonts/saptami_arcade.ttf")
 k.loadSound("splat", "/sounds/splat.mp3")
 k.loadSound("ouch", "/sounds/ouch.mp3")
 k.loadSound("die", "/sounds/die.mp3")
-
-k.loadSound("bgm", "/music/bgm.mp3")
