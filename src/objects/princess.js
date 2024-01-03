@@ -6,22 +6,21 @@ export const makePrincess = (dummy = false) => {
         k.pos(k.center()),
         k.anchor('center'),
         k.health(4),
-        k.area({ shape: new k.Rect(k.vec2(0), 80, 200) }),
+        k.area({ shape: new k.Rect(k.vec2(0), 16, 40) }),
         k.body({ isStatic: true }),
         k.state('idle', ['idle', 'scream']),
-        k.z(100)
+        k.z(4),
+        k.scale(2)
     ])
 
     princess.add([
         k.sprite('princess_shadow'),
         k.anchor('center'),
-        k.pos(-20, 100),
-        k.scale(5),
+        k.pos(-4, 20),
     ])
 
     const princessBody = princess.add([
         k.sprite('princess'),
-        k.scale(5),
         k.anchor('center'),
     ])
 

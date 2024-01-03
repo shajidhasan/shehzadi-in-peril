@@ -5,21 +5,21 @@ const healthBar = (initialHealth, totalHealth) => {
     return {
         id: 'healthBar',
         draw() {
-            const width = 170 * currentHealth / totalHealth
+            const width = 40 * currentHealth / totalHealth
 
             k.drawRect({
-                width: 180,
-                height: 30,
+                width: 44,
+                height: 8,
                 color: k.rgb(229, 24, 18),
                 anchor: 'center'
             })
 
             k.drawRect({
                 width: width,
-                height: 20,
+                height: 4,
                 color: k.rgb(47, 224, 35),
                 anchor: 'left',
-                pos: k.vec2(-170 / 2, 0)
+                pos: k.vec2(-40 / 2, 0)
             })
         },
         setHealth(health) {
@@ -30,7 +30,7 @@ const healthBar = (initialHealth, totalHealth) => {
 
 export const makeHealth = () => {
     const health = k.make([
-        k.pos(k.vec2(0, -140)),
+        k.pos(k.vec2(0, -30)),
         k.anchor('center'),
         healthBar(4, 4)
     ])

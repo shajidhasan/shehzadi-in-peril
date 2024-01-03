@@ -13,7 +13,7 @@ export const makeAlien = (normalSpeed, fastSpeed) => {
         speed = fastSpeed
     }
 
-    let dy = k.randi(140, 240)
+    let dy = k.randi(56, 96)
 
     if (k.chance(0.5)) {
         isTop = true
@@ -21,18 +21,12 @@ export const makeAlien = (normalSpeed, fastSpeed) => {
     } else {
         position.y = k.height() + dy
     }
-    let angle = -Math.atan((center.x - position.x) / (center.y - position.y)) * 180 / Math.PI
-
-    if (isTop) {
-        angle = angle - 180
-    }
 
     const alien = k.make([
         k.pos(position),
         k.anchor('center'),
-        k.area({ shape: new k.Rect(k.vec2(0), 80, 200) }),
+        k.area({ shape: new k.Rect(k.vec2(0), 32, 80) }),
         k.body(),
-        k.rotate(angle),
         k.z(10),
         k.state("alive", ["alive", "dead", "poison"]),
         'alien'
@@ -41,22 +35,22 @@ export const makeAlien = (normalSpeed, fastSpeed) => {
     const alienShadow = alien.add([
         k.sprite('alien_shadow'),
         k.anchor('center'),
-        isTop ? k.pos(8, 30) : k.pos(-8, 30),
-        k.scale(5),
+        isTop ? k.pos(3, 12) : k.pos(-3, 12),
+        k.scale(2),
         k.opacity(0.5)
     ])
 
     const alienBody = alien.add([
         k.sprite(isFast ? 'alien_dark' : 'alien'),
         k.anchor('center'),
-        k.scale(5),
+        k.scale(2),
         k.opacity(),
         k.z(10)
     ])
 
     const alienHitbox = alien.add([
         k.anchor('center'),
-        k.area({ shape: new k.Rect(k.vec2(0), 200, 200), collisionIgnore: '*' }),
+        k.area({ shape: new k.Rect(k.vec2(0), 80, 80), collisionIgnore: '*' }),
         k.pos(0, 0),
         k.body(),
         "alienHitbox"
@@ -69,7 +63,12 @@ export const makeAlien = (normalSpeed, fastSpeed) => {
     alien.onStateUpdate("alive", () => {
         const position = alien.pos
         const direction = k.center().sub(position).unit()
+        let angle = -Math.atan((center.x - position.x) / (center.y - position.y)) * 180 / Math.PI
 
+        if (isTop) {
+            angle = angle - 180
+        }
+        alien.angle = angle
         alien.move(direction.scale(speed))
     })
 
@@ -81,7 +80,7 @@ export const makeAlien = (normalSpeed, fastSpeed) => {
             k.anchor('center'),
             k.sprite('alien_blood'),
             k.opacity(0.5),
-            k.scale(5),
+            k.scale(2),
             'blood'
         ])
 
@@ -98,11 +97,11 @@ export const makeAlien = (normalSpeed, fastSpeed) => {
         alien.use(k.area({ shape: new k.Rect(k.vec2(0), 0, 0) }))
 
         const poison = alien.add([
-            k.pos(k.vec2(0, -50)),
+            k.pos(k.vec2(0, -20)),
             k.anchor('center'),
             k.sprite('alien_poison'),
             k.opacity(0.5),
-            k.scale(5),
+            k.scale(2),
             'poison'
         ])
 
