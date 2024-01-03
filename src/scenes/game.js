@@ -42,4 +42,11 @@ k.scene("game", () => {
     })
 
     spawnAlien()
+
+    k.onClick('alienHitbox', (hitbox) => {
+        const alien = hitbox.parent
+        if (alien.state === 'dead' || alien.state === 'poison') return
+        alien.enterState('dead')
+        k.play('splat', { volume: 0.4 })
+    })
 })
