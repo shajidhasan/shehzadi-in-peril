@@ -49,6 +49,13 @@ export const makeAlien = (normalSpeed, fastSpeed) => {
         k.z(10)
     ])
 
+    const alienHitbox = alien.add([
+        k.anchor('center'),
+        k.area({ shape: new k.Rect(k.vec2(0), 200, 200), collisionIgnore: '*' }),
+        k.pos(0, 0),
+        k.body()
+    ])
+
     alien.onStateEnter('alive', () => {
         alienBody.play('alive')
     })
@@ -124,7 +131,7 @@ export const makeAlien = (normalSpeed, fastSpeed) => {
     })
 
 
-    alien.onClick(() => {
+    alienHitbox.onClick(() => {
         alien.enterState('dead')
         k.play('splat', { volume: 0.4 })
     })
