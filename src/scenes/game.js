@@ -37,7 +37,7 @@ k.scene("game", () => {
     }
 
     princess.onDeath(async () => {
-        await wait(1)
+        await k.wait(1)
         k.go('over', score.value)
     })
 

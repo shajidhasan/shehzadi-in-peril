@@ -13,7 +13,7 @@ export const makeAlien = (normalSpeed, fastSpeed) => {
         speed = fastSpeed
     }
 
-    let dy = randi(140, 240)
+    let dy = k.randi(140, 240)
 
     if (k.chance(0.5)) {
         isTop = true
