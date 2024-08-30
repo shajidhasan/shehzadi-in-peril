@@ -1,4 +1,4 @@
-import k from "./kaboom"
+import k from "./kaplay"
 
 import logo from "./assets/sprites/logo.png"
 import alien from "./assets/sprites/alien.png"

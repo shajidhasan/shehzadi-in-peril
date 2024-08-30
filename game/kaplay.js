@@ -5,7 +5,8 @@ const k = kaplay({
     backgroundAudio: true,
     stretch: false,
     crisp: true,
-    debug: false
+    debug: false,
+    global: false
 });
 
 export default k;

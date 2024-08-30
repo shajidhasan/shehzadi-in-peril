@@ -1,4 +1,4 @@
-import k from "./game/kaboom"
+import k from "./game/kaplay"
 
 import "./game/assets"
 import "./game/scenes/start"

@@ -1,4 +1,4 @@
-import k from "../kaboom"
+import k from "../kaplay"
 import { makeBackground } from "../objects/background"
 
 k.scene("over", (score) => {
@@ -12,13 +12,13 @@ k.scene("over", (score) => {
         k.scale(0.5)
     ])
     k.add([
-        k.text("HOW COULD YOU LET SHEHZADI DIE?!", { font: 'saptami_arcade', size: 24 }),
+        k.text("SHEHZADI IS DEAD, THANKS TO YOU", { font: 'saptami_arcade', size: 24 }),
         k.anchor('center'),
         k.pos(k.center().add(k.vec2(0, 100))),
         k.z(10)
     ])
     k.add([
-        k.text("HOW COULD YOU LET SHEHZADI DIE?!", { font: 'saptami_arcade', size: 24 }),
+        k.text("SHEHZADI IS DEAD, THANKS TO YOU", { font: 'saptami_arcade', size: 24 }),
         k.anchor('center'),
         k.pos(k.center().add(k.vec2(-5, 105))),
         k.color([0, 0, 0]),

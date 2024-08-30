@@ -1,4 +1,4 @@
-import k from "../kaboom"
+import k from "../kaplay"
 import { makeBackground } from "../objects/background"
 import { makePrincess } from "../objects/princess"
 
