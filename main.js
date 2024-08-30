@@ -1,4 +1,5 @@
 import k from "./game/kaplay"
+import './style.css'
 
 import "./game/assets"
 import "./game/scenes/start"
