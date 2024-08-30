@@ -1,16 +1,20 @@
 import k from '../kaplay'
 
+
+const MAXIMUM_SPEED = 500
+const MAXIMUM_FAST_SPEED = 700
+
 export const makeAlien = (normalSpeed, fastSpeed) => {
     const center = k.center()
     const position = k.vec2(k.randi(k.width()), 0)
 
     let isFast = false
     let isTop = false
-    let speed = normalSpeed
+    let speed = Math.min(normalSpeed, MAXIMUM_SPEED)
 
     if (k.chance(0.1)) {
         isFast = true
-        speed = fastSpeed
+        speed = Math.min(fastSpeed, MAXIMUM_FAST_SPEED)
     }
 
     let dy = k.randi(56, 96)
