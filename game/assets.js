@@ -3,6 +3,7 @@ import k from "./kaplay"
 import logo from "./assets/sprites/logo.png"
 import ant from "./assets/sprites/ant.png"
 import floor from "./assets/sprites/floor.png"
+import success from "./assets/sprites/success.png"
 import princess from "./assets/sprites/princess.png"
 import game_over from "./assets/sprites/game_over.png"
 import ant_dark from "./assets/sprites/ant_dark.png"
@@ -62,6 +63,7 @@ k.loadSprite("logo", logo)
 k.loadSprite("floor", floor)
 k.loadSprite("game_over", game_over)
 k.loadSprite("ant_shadow", ant_shadow)
+k.loadSprite("success", success)
 k.loadSprite("ant_blood", ant_blood)
 k.loadSprite("ant_poison", ant_poison)
 k.loadSprite("princess_shadow", princess_shadow)
