@@ -1,6 +1,6 @@
 # Shehzadi in Peril
 
-**Shehzadi in Peril** is a super simple yet game where you must protect Shehzadi from an onslaught of ants. Tap on the ants to squash them before they reach Shehzadi. The game gets more challenging as the ants' speed increases over time.
+**Shehzadi in Peril** is a super simple game where you must protect Shehzadi from an onslaught of ants. Tap on the ants to squash them before they reach Shehzadi. The game gets more challenging as the ants' speed increases over time.
 
 This game is best played on touch devices for the best experience. To play the game [click here](https://shehzadi.vercel.app).
 
