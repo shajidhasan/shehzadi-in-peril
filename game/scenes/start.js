@@ -24,9 +24,9 @@ k.scene("start", () => {
     ])
 
     const prompt = k.add([
-        k.text("TAP ANYWHERE TO START", { font: 'saptami_arcade', size: 10 }),
+        k.text("TAP ANYWHERE TO START", { font: 'saptami_arcade', size: 12 }),
         k.anchor('center'),
-        k.pos(k.center().add(0, 120)),
+        k.pos(k.center().add(0, 140)),
         k.opacity(),
         { blinkTimer: 0 },
     ])
@@ -39,6 +39,21 @@ k.scene("start", () => {
             prompt.blinkTimer = 0;
         }
     })
+
+    k.add([
+        k.text("TAP ON ANTS TO SQUASH THEM!", { font: 'saptami_arcade', size: 10 }),
+        k.anchor('center'),
+        k.pos(k.center().add(k.vec2(0, 120))),
+        k.z(10)
+    ])
+    k.add([
+        k.text("TAP ON ANTS TO SQUASH THEM!", { font: 'saptami_arcade', size: 10 }),
+        k.anchor('center'),
+        k.pos(k.center().add(k.vec2(-1, 121))),
+        k.color([0, 0, 0]),
+        k.opacity(0.5),
+        k.z(5)
+    ])
 
     k.onMousePress(() => {
         if (starting) return
