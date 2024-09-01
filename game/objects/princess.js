@@ -31,12 +31,12 @@ export const makePrincess = (dummy = false) => {
 
     const healthBar = princess.add(makeHealth())
 
-    princess.onCollide('alien', (alien) => {
+    princess.onCollide('ant', (ant) => {
         if (princess.hp() === 0) return
         princess.hurt(1)
         healthBar.setHealth(princess.hp())
         princess.enterState('scream')
-        alien.enterState('poison')
+        ant.enterState('poison')
         if (princess.hp() > 0) {
             k.play('ouch', { volume: 0.4 })
         } else {

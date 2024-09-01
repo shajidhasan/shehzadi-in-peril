@@ -1,15 +1,15 @@
 import k from "../kaplay";
 import { makeBackground } from "../objects/background";
-import { makeAlien } from "../objects/alien";
+import { makeAnt } from "../objects/ant";
 import { makePrincess } from "../objects/princess";
 import { makeScore } from "../objects/score";
 
-const NORMAL_SPEED_INCREMENT = 0.5
-const FAST_SPEED_INCREMENT = 0.5
+const NORMAL_SPEED_INCREMENT = 0.4
+const FAST_SPEED_INCREMENT = 0.4
 const INITIAL_NORMAL_SPEED = 100
 const INITIAL_FAST_SPEED = 300
 const INITIAL_WAIT_TIME = 1
-const WAIT_TIME_DECREMENT = 0.0075
+const WAIT_TIME_DECREMENT = 0.006
 const MINIMUM_WAIT_TIME = 0.15
 
 
@@ -22,15 +22,15 @@ k.scene("game", () => {
     const princess = k.add(makePrincess())
     const score = k.add(makeScore())
 
-    const spawnAlien = () => {
-        const alien = k.add(makeAlien(normalSpeed, fastSpeed))
+    const spawnAnt = () => {
+        const ant = k.add(makeAnt(normalSpeed, fastSpeed))
 
-        alien.onStateEnter('dead', () => {
+        ant.onStateEnter('dead', () => {
             score.value++
             score.text = score.value
         })
 
-        k.wait(Math.max(waitTime, MINIMUM_WAIT_TIME), spawnAlien)
+        k.wait(Math.max(waitTime, MINIMUM_WAIT_TIME), spawnAnt)
         waitTime -= WAIT_TIME_DECREMENT
         normalSpeed += NORMAL_SPEED_INCREMENT
         fastSpeed += FAST_SPEED_INCREMENT
@@ -41,12 +41,12 @@ k.scene("game", () => {
         k.go('over', score.value)
     })
 
-    spawnAlien()
+    spawnAnt()
 
-    k.onClick('alienHitbox', (hitbox) => {
-        const alien = hitbox.parent
-        if (alien.state === 'dead' || alien.state === 'poison') return
-        alien.enterState('dead')
+    k.onClick('antHitbox', (hitbox) => {
+        const ant = hitbox.parent
+        if (ant.state === 'dead' || ant.state === 'poison') return
+        ant.enterState('dead')
         k.play('splat', { volume: 0.4 })
     })
 })

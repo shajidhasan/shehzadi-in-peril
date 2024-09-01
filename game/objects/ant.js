@@ -4,7 +4,7 @@ import k from '../kaplay'
 const MAXIMUM_SPEED = 500
 const MAXIMUM_FAST_SPEED = 700
 
-export const makeAlien = (normalSpeed, fastSpeed) => {
+export const makeAnt = (normalSpeed, fastSpeed) => {
     const center = k.center()
     const position = k.vec2(k.randi(k.width()), 0)
 
@@ -26,63 +26,63 @@ export const makeAlien = (normalSpeed, fastSpeed) => {
         position.y = k.height() + dy
     }
 
-    const alien = k.make([
+    const ant = k.make([
         k.pos(position),
         k.anchor('center'),
         k.area({ shape: new k.Rect(k.vec2(0), 32, 80) }),
         k.body(),
         k.z(10),
         k.state("alive", ["alive", "dead", "poison"]),
-        'alien'
+        'ant'
     ])
 
-    const alienShadow = alien.add([
-        k.sprite('alien_shadow'),
+    const antShadow = ant.add([
+        k.sprite('ant_shadow'),
         k.anchor('center'),
         isTop ? k.pos(3, 12) : k.pos(-3, 12),
         k.scale(2),
         k.opacity(0.5)
     ])
 
-    const alienBody = alien.add([
-        k.sprite(isFast ? 'alien_dark' : 'alien'),
+    const antBody = ant.add([
+        k.sprite(isFast ? 'ant_dark' : 'ant'),
         k.anchor('center'),
         k.scale(2),
         k.opacity(),
         k.z(10)
     ])
 
-    const alienHitbox = alien.add([
+    const antHitbox = ant.add([
         k.anchor('center'),
         k.area({ shape: new k.Rect(k.vec2(0), 80, 80), collisionIgnore: '*' }),
         k.pos(0, 0),
         k.body(),
-        "alienHitbox"
+        "antHitbox"
     ])
 
-    alien.onStateEnter('alive', () => {
-        alienBody.play('alive')
+    ant.onStateEnter('alive', () => {
+        antBody.play('alive')
     })
 
-    alien.onStateUpdate("alive", () => {
-        const position = alien.pos
+    ant.onStateUpdate("alive", () => {
+        const position = ant.pos
         const direction = k.center().sub(position).unit()
         let angle = -Math.atan((center.x - position.x) / (center.y - position.y)) * 180 / Math.PI
 
         if (isTop) {
             angle = angle - 180
         }
-        alien.angle = angle
-        alien.move(direction.scale(speed))
+        ant.angle = angle
+        ant.move(direction.scale(speed))
     })
 
-    alien.onStateEnter("dead", () => {
-        alienBody.play('dead')
-        alien.use(k.area({ shape: new k.Rect(k.vec2(0), 0, 0) }))
+    ant.onStateEnter("dead", () => {
+        antBody.play('dead')
+        ant.use(k.area({ shape: new k.Rect(k.vec2(0), 0, 0) }))
 
-        const blood = alien.add([
+        const blood = ant.add([
             k.anchor('center'),
-            k.sprite('alien_blood'),
+            k.sprite('ant_blood'),
             k.opacity(0.5),
             k.scale(2),
             'blood'
@@ -96,14 +96,14 @@ export const makeAlien = (normalSpeed, fastSpeed) => {
         })
     })
 
-    alien.onStateEnter("poison", () => {
-        alienBody.play('poison')
-        alien.use(k.area({ shape: new k.Rect(k.vec2(0), 0, 0) }))
+    ant.onStateEnter("poison", () => {
+        antBody.play('poison')
+        ant.use(k.area({ shape: new k.Rect(k.vec2(0), 0, 0) }))
 
-        const poison = alien.add([
+        const poison = ant.add([
             k.pos(k.vec2(0, -20)),
             k.anchor('center'),
-            k.sprite('alien_poison'),
+            k.sprite('ant_poison'),
             k.opacity(0.5),
             k.scale(2),
             'poison'
@@ -117,23 +117,23 @@ export const makeAlien = (normalSpeed, fastSpeed) => {
         })
     })
 
-    alien.onStateUpdate("dead", () => {
-        alienBody.opacity -= k.dt() / 3
-        alienShadow.opacity -= k.dt() / 3
+    ant.onStateUpdate("dead", () => {
+        antBody.opacity -= k.dt() / 3
+        antShadow.opacity -= k.dt() / 3
 
 
-        if (alienBody.opacity <= 0) {
-            alien.destroy()
+        if (antBody.opacity <= 0) {
+            ant.destroy()
         }
     })
 
-    alien.onStateUpdate("poison", () => {
-        alienBody.opacity -= k.dt() / 3
-        alienShadow.opacity -= k.dt() / 3
+    ant.onStateUpdate("poison", () => {
+        antBody.opacity -= k.dt() / 3
+        antShadow.opacity -= k.dt() / 3
 
-        if (alienBody.opacity <= 0) {
-            alien.destroy()
+        if (antBody.opacity <= 0) {
+            ant.destroy()
         }
     })
-    return alien
+    return ant
 }
