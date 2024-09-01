@@ -4,7 +4,7 @@ import { makeBackground } from "../objects/background"
 
 const overMessages = [
     "SHEHZADI IS DEAD, THANKS TO YOU.",
-    "HOW COULD YOU LET SHEHZADI DIE?",
+    "HOW COULD YOU LET THE SHEHZADI DIE?",
     "YOU FAILED THE SHEHZADI",
     "SHEHZADI'S FATE WAS IN YOUR HANDS...",
     "YOU WERE HER LAST HOPE...",

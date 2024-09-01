@@ -49,7 +49,7 @@ export const levels = [
         blackSpeed: 240
     },
     {
-        duration: 30,
+        duration: 50,
         timeGap: 2,
         blackProbability: 0.8,
         normalSpeed: 150,
