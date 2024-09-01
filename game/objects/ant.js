@@ -1,20 +1,17 @@
 import k from '../kaplay'
 
 
-const MAXIMUM_SPEED = 200
-const MAXIMUM_FAST_SPEED = 400
-
-export const makeAnt = (normalSpeed, fastSpeed) => {
+export const makeAnt = (normalSpeed, blackSpeed, blackProbability) => {
     const center = k.center()
     const position = k.vec2(k.randi(k.width()), 0)
 
     let isFast = false
     let isTop = false
-    let speed = Math.min(normalSpeed, MAXIMUM_SPEED)
+    let speed = normalSpeed
 
-    if (k.chance(0.1)) {
+    if (k.chance(blackProbability)) {
         isFast = true
-        speed = Math.min(fastSpeed, MAXIMUM_FAST_SPEED)
+        speed = blackSpeed
     }
 
     let dy = k.randi(56, 96)
@@ -118,8 +115,8 @@ export const makeAnt = (normalSpeed, fastSpeed) => {
     })
 
     ant.onStateUpdate("dead", () => {
-        antBody.opacity -= k.dt() / 3
-        antShadow.opacity -= k.dt() / 3
+        antBody.opacity -= k.dt() / 1.5
+        antShadow.opacity -= k.dt() / 1.5
 
 
         if (antBody.opacity <= 0) {
@@ -128,8 +125,8 @@ export const makeAnt = (normalSpeed, fastSpeed) => {
     })
 
     ant.onStateUpdate("poison", () => {
-        antBody.opacity -= k.dt() / 3
-        antShadow.opacity -= k.dt() / 3
+        antBody.opacity -= k.dt() / 1.5
+        antShadow.opacity -= k.dt() / 1.5
 
         if (antBody.opacity <= 0) {
             ant.destroy()

@@ -8,4 +8,4 @@ import "./game/scenes/over"
 import "./game/scenes/debug"
 import "./game/scenes/success"
 
-k.go("success")
+k.go("start")
