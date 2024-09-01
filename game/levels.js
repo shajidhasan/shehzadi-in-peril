@@ -59,7 +59,7 @@ export const levels = [
         duration: 30,
         timeGap: 0.5,
         blackProbability: 0.2,
-        normalSpeed: 200,
+        normalSpeed: 220,
         blackSpeed: 450
     },
 ]
