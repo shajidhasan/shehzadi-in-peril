@@ -1,8 +1,8 @@
 import k from '../kaplay'
 
 
-const MAXIMUM_SPEED = 500
-const MAXIMUM_FAST_SPEED = 700
+const MAXIMUM_SPEED = 200
+const MAXIMUM_FAST_SPEED = 400
 
 export const makeAnt = (normalSpeed, fastSpeed) => {
     const center = k.center()
