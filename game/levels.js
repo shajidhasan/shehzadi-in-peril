@@ -53,13 +53,13 @@ export const levels = [
         timeGap: 2,
         blackProbability: 0.8,
         normalSpeed: 150,
-        blackSpeed: 500
+        blackSpeed: 350
     },
     {
         duration: 30,
         timeGap: 0.5,
         blackProbability: 0.2,
         normalSpeed: 220,
-        blackSpeed: 450
+        blackSpeed: 350
     },
 ]
